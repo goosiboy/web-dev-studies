@@ -1,2 +1,2 @@
-# angular-testing
-Learning AngularJS. School related/Studies.
+# web-dev-studies
+Learning AngularJS etc. School - related/General studies.
