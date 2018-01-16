@@ -7,7 +7,7 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
+import { HeroService } from '../hero.service';
 
 /**
  * @Component on dekoraattori. Dekoraattoreiden avulla voidaan antaa luokille, sekä metodeille uusia ominaisuuksia. Yksi yleinen 
@@ -31,16 +31,20 @@ export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
 
-  heroes = HEROES;
+  heroes: Hero[];
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.getHeroes();
+  }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
 
-}
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
 
-console.log('HEROES: ', HEROES);
+}
