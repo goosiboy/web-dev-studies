@@ -1,23 +1,16 @@
 <div *ngIf="hero">
-  <h2>{{ hero.name }} Details</h2>
-
+  <h2>{{ hero.name | uppercase }} Details</h2>
   <div>
-    <span>id: </span>{{hero.id}}
-  </div>
-
+    <span>id: </span>{{hero.id}}</div>
   <div>
-    <span>name: </span>{{hero.name | uppercase}}
-  </div>
-
-  <!-- 
-  Mahdollistetaan ns. two-way data binding ottamalla käyttöön ngModel - komponentti. Tämä komponentti 
-  löytyy angularin forms - moduulista. Tässä esimerkissä se importataan app.module.ts - tiedostossa, jossa se 
-  otetaan käyttöön asettamalla se @ngModule - decoraattoriin.
- -->
-  <div>
-    <label>Change name:
-      <input [(ngModel)]="hero.name" placeholder="name">
+      <!-- 
+        Mahdollistetaan ns. two-way data binding ottamalla käyttöön ngModel - komponentti. Tämä komponentti 
+        löytyy angularin forms - moduulista. Tässä esimerkissä se importataan app.module.ts - tiedostossa, jossa se 
+        otetaan käyttöön asettamalla se @ngModule - decoraattoriin.
+       -->
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name" />
     </label>
   </div>
+  <button (click)="goBack()">go back</button>
 </div>
-

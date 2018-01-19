@@ -10,8 +10,9 @@ import { Hero } from './hero';
 import { HeroService } from '../hero.service';
 
 /**
- * @Component on dekoraattori. Dekoraattoreiden avulla voidaan antaa luokille, sekä metodeille uusia ominaisuuksia. Yksi yleinen 
- * käyttötapa on tehdä luokan arvoista muuttumattomia (descriptor.writable = false). Angularissa dekoraattoreilla määritetään 
+ * @Component on dekoraattori. Dekoraattoreiden avulla voidaan antaa luokille, sekä metodeille uusia ominaisuuksia ilman 
+ * niiden muokkaamista suoraan. 
+ * Yksi yleinen käyttötapa on tehdä luokan arvoista muuttumattomia (descriptor.writable = false). Angularissa dekoraattoreilla määritetään 
  * luoduille komponenteille selector, templateUrl, sekä styleUrl - arvot. Nämä arvot menevät Component - funktioon, joka on Angularin
  * coressa sijaitseva wrapper - funktio. 
  * 
@@ -28,23 +29,16 @@ import { HeroService } from '../hero.service';
 })
 
 export class HeroesComponent implements OnInit {
-
-  selectedHero: Hero;
-
   heroes: Hero[];
 
   constructor(private heroService: HeroService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
-
 }
