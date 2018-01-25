@@ -1,0 +1,12 @@
+.mainContainer h1 {
+    width: 750px;
+    margin: auto;
+    padding-top: 50px;
+    position: relative;
+}
+
+.mainContainer {
+    background-color: rgb(232, 232, 232);
+
+
+}

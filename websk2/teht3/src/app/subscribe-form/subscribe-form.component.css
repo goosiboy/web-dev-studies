@@ -1,0 +1,36 @@
+.container {
+  width: 500px;
+  height: 400px;
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 20px;
+  position: relative;
+  border-radius: 5px;
+  background-color: rgb(164, 164, 164);
+  color: white;
+  text-decoration: none;
+}
+
+h3 {
+  padding-bottom: 10px;
+}
+
+button {
+  background-color: rgb(96, 96, 96);
+  border: none;
+  font-size: 17px;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: rgb(173, 173, 173);
+}
+
+p {
+  color : rgb(255, 255, 255);
+  font-size: 18px;
+  background-color: rgb(117, 117, 117);
+  padding: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
