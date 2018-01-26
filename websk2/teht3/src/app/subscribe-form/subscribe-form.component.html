@@ -1,3 +1,7 @@
+<div *ngIf="validationAlert" class="alertBox" role="alert">
+  <p align="center">Täytä koko lomake ennen lähettämistä!</p>
+</div>
+
 <div class="container">
   <h3>Ilmoittautumislomake</h3>
   <form [formGroup]="userForm" novalidate> <!-- novalidate tells the browser not to try any native HTML validations on this element -->
@@ -18,14 +22,13 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label for="food">Sauna</label>
+      <input type="checkbox" class="radioButton" formControlName="sauna">
+    </div>
+
     <button type="submit" class="btn btn-success" (click)="onSubmit()">Lähetä</button>
 
   </form>
-  <br />
-  <br />
-  <br />
-  <div *ngIf="condition" role="alert">
-    <p align="center">Täytä koko lomake ennen lähettämistä!</p>
-  </div>
 
 </div>

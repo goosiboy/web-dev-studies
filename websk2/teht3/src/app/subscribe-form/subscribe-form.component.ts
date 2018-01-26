@@ -15,8 +15,9 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class SubscribeFormComponent implements OnInit {
   foods: any;
-  flag: any;
-  public condition = false;
+  propertyStatus: any;
+  propertyDirty: any;
+  public validationAlert = false;
 
   userForm: FormGroup; // userForm is of type FormGroup
 
@@ -32,25 +33,25 @@ export class SubscribeFormComponent implements OnInit {
 
   createForm() {
     this.userForm = this.fob.group({
-      name: ['', Validators.required ],
+      name: ['', Validators.required],
       email: ['', Validators.required],
-      food: ['', Validators.required]
+      food: ['', Validators.required],
+      sauna: ''
     });
   }
 
   onSubmit() {
 
-    this.flag = this.userForm.status;
+    this.propertyStatus = this.userForm.status;
+    this.propertyDirty = this.userForm.dirty;
 
-    if (this.flag === 'VALID') {
+    if (this.propertyStatus === 'VALID') {
       this.localStorageService.setFormData(this.userForm.value);
     } else {
-      this.condition = true;
+      this.validationAlert = true;
+      console.log(this.propertyStatus);
     }
-
-    // this.localStorageService.setFormData();
   }
-
 
   ngOnInit() {
 

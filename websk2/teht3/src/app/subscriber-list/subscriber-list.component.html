@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>Ilmoittautuneet</h3>
+
+    <table>
+      <thead>
+        <th>#</th>
+        <th>Nimi</th>
+        <th>Email</th>
+        <th>Ruoka</th>
+        <th>Sauna</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userArray; let i = index" [attr.data-index]="i">
+          <td>{{ i }}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.food}}</td>
+          <td>{{user.sauna}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
