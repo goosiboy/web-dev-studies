@@ -12,6 +12,27 @@ import { FormDataService } from './form-data.service';
 import { LocalStorageService } from './local-storage.service';
 import { SubscriberListComponent } from './subscriber-list/subscriber-list.component';
 
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {
+    path: 'subscriber-list',
+    component: SubscriberListComponent
+  },
+  {
+    path: 'subscribe-form',
+    component: SubscribeFormComponent },
+  {
+    path: '',
+    redirectTo: '/',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: SubscriberListComponent
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +43,11 @@ import { SubscriberListComponent } from './subscriber-list/subscriber-list.compo
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: false }
+    )
   ],
   providers: [FormDataService, LocalStorageService],
   bootstrap: [AppComponent]

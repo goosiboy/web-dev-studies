@@ -9,14 +9,21 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class SubscriberListComponent implements OnInit {
 
+  test: any;
   userArray: any;
 
-  constructor(private localStorageService: LocalStorageService) { }
+  constructor(private localStorageService: LocalStorageService) {
+
+    this.userArray = this.localStorageService.getFormData() || [];
+
+  }
 
   ngOnInit() {
-    this.localStorageService.watchStorage().subscribe((data: string) => {
+
+    this.localStorageService.storageSubject.subscribe((data: string) => {
       this.userArray = this.localStorageService.getFormData();
     });
+
   }
 
 }

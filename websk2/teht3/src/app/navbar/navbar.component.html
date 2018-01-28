@@ -2,16 +2,11 @@
   <h2> {{ title }} </h2>
   <div class="navButtons">
     <li>
-      <a class="active" href="#home">Home</a>
+      <a routerLink="/subscriber-list" routerLinkActive="active">Ilmoittautuneet</a>
     </li>
     <li>
-      <a href="#news">News</a>
+      <a routerLink="/subscribe-form" routerLinkActive="active">Ilmoittaudu</a>
     </li>
-    <li>
-      <a href="#contact">Contact</a>
-    </li>
-    <li>
-      <a href="#about">About</a>
-  </li>
  </div>
 </ul>
+<router-outlet></router-outlet>
