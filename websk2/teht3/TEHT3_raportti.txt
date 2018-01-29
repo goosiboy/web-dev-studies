@@ -1,3 +1,7 @@
 AngularJS ja Angular 2-4 erot:
 
-AngularJS on ensimmäinen versio Angular - nimisestä frameworkista.
+AngularJS on ensimmäinen versio Angular - nimisestä frameworkista. Angular 2:sta eteenpäin Google siirtyi
+käyttämään komponentti - pohjaista ohjelmointirakennetta Angularissa. Angular 2 teki kehittämisestä
+nopeampaa, sekä selkeämpää. Lisäksi hypättiin käyttämään typescriptiä vanilla javascriptin sijaan (vaikka
+vanilla javascriptiakin voi luonnollisesti käyttää Angularissa edelleen). Angular 2-4 on kokonaisuudessaan
+nopeampi, sekä optimoidumpi versio AngularJS:stä.
