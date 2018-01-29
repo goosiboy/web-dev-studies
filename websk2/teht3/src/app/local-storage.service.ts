@@ -8,7 +8,7 @@ export class LocalStorageService {
   public storageSubject = new Subject<any>();
 
   private formData: any;
-  private localHistory: any;
+  private localHistory: any[];
   private currentHistory: any;
   private placeHolder: any = { name: null, email: null, food: null, sauna: null };
 
@@ -29,7 +29,19 @@ export class LocalStorageService {
     this.localHistory = JSON.parse(localStorage.getItem('userArray')) || [];
 
     if (this.localHistory !== null) {
+
+      this.localHistory.map(function (user) {
+        if (user.sauna === true) {
+          user.sauna = 'Kyllä';
+        } else {
+          user.sauna = 'Ei';
+        }
+      });
+
+      console.log('this.localHistory: ', this.localHistory);
+
       return this.localHistory;
+
     } else {
       return JSON.parse(this.placeHolder);
     }

@@ -16,6 +16,8 @@ export class SubscriberListComponent implements OnInit {
 
     this.userArray = this.localStorageService.getFormData() || [];
 
+    console.log('this.userArray: ', this.userArray);
+
   }
 
   ngOnInit() {

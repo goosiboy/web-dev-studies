@@ -1,0 +1,3 @@
+AngularJS ja Angular 2-4 erot:
+
+AngularJS on ensimmäinen versio Angular - nimisestä frameworkista.

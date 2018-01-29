@@ -49,7 +49,6 @@ export class SubscribeFormComponent implements OnInit {
       this.localStorageService.setFormData(this.userForm.value);
     } else {
       this.validationAlert = true;
-      console.log(this.propertyStatus);
     }
   }
 
