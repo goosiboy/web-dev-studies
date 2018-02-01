@@ -23,6 +23,16 @@ function checkWinner(squares) {
 
 }
 
+function checkBoard(stepNumber) {
+
+    if(stepNumber === 8) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
 function Square(props) {
     return (
         <button className = "square" onClick = {props.onClick}>
@@ -74,11 +84,19 @@ class Game extends React.Component {
                 squares: Array(9).fill(null)
             }],
             stepNumber : 0,
-            xIsNext: true
+            xIsNext: true,
+            boardFull: false
         }
     }
 
     handleClick(i) {
+
+        if(checkBoard(this.state.stepNumber)) {
+            this.setState({
+                boardFull: true
+            });
+        }
+
         const history = this
             .state
             .history
@@ -135,10 +153,15 @@ class Game extends React.Component {
         let status;
         if (winner) {
             status = 'Winner: ' + winner;
+            console.log("winner: ", winner);
         } else {
-            status = 'Next player: ' + (this.state.xIsNext
-                ? 'X'
-                : 'O');
+            if(this.state.boardFull === false) {
+                status = 'Next player: ' + (this.state.xIsNext
+                    ? 'X'
+                    : 'O');
+            } else {
+                status = 'Draw game!';
+            }
         }
 
         return (
