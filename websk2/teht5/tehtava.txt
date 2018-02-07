@@ -1,0 +1,18 @@
+Tee Reactilla yksinkertainen tietovisa jossa on kysymys ja sen alla kolme vastausvaihtoehtoa.
+Valittuasi vastausvaihtoehdon, alle ilmestyy teksti jossa kerrotaan vastasitko oikein vai ei.
+Sovelluksen ja sen komponenttien koodin tulee noudattaa ES6 -syntaksia. Kysymys ja vastausvaihtoehdot
+tulee  hakea sovellukseen ulkoisesta JSON-tiedostosta.
+
+Ohje: Sovellus voi muodostua kolmesta komponentista: äitikomponentti voi olla esim. App, joka sisältää
+Question-komponentin ja Result-komponentin. Äitikomponentissa on state, johon haetaan kysymysten data - kysymys,
+vastausvaihtoehdot ja onko vaihtoehto oikea - ulkoisesta tiedostosta, esim. data.json. Json -tiedoston haku stateen
+kannattaa tehdä esim. fetch():llä. Statessa olevaan taulukkomuuttujaan tulee käyttäjän antama vastaus.
+Sitä verrataan oikeaan vastaukseen (tee metodi) ja vertailun tuloksena saatu tieto näytetään Result-komponentissa
+vastausvaihtoehtojen alla. Question-komponentissa renderöidään kysymys ja vastausvaihtoehdot jotka saadaan
+äitikomponentin statesta Question komponentin propsina tyyliin: <Question data={this.state.data} />.
+Result-komponentti saa myös tiedon siitä oliko vastaus oikein propsina äitikomponentilta.
+Tässä esimerkkinä Question -komponentti, jossa data on  kovakoodattu.
+
+Aluksi tehtävän voi tehdä mahdollisimman helposti siten että dataa ei haeta ulkoisesta
+lähteestä vaan se on kovakoodattuna komponenteissa. Sen jälkeen koita muuttaa sovellus sellaiseksi
+että data tulee ulkoa.
