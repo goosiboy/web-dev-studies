@@ -1,0 +1,29 @@
+{
+    "question_array": [
+        {
+            "question": "What is the capital of Finland?",
+            "answers_array": [
+                "Helsinki",
+                "Turku",
+                "Oulu"
+            ],
+            "right_answer": "Helsinki"
+        },
+        {
+            "question": "What is the color of the sky?",
+            "answers_array": [
+                "Blue",
+                "Green",
+                "Violet"
+            ]
+        },
+        {
+            "question": "Is this game boring?",
+            "answers_array": [
+                "Yes",
+                "No",
+                "Yes?"
+            ]
+        }
+    ]
+}

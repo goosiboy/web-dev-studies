@@ -13,7 +13,7 @@ class App extends Component {
 
     return (
       <section id="main-section">
-        <h2>Trivia - game</h2>
+        <h2>3 Questions</h2>
         <Main />
       </section>
     );

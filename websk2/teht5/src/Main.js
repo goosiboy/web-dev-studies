@@ -8,8 +8,11 @@ class Main extends Component {
         super(props);
 
         this.state = {
-            gameStarted: false
+            gameStarted: false,
+            questions: []
         }
+
+        const url = ''
 
         // Bindataan metodien kontekstit konstruktorissa
         this.startGame = this.startGame.bind(this);
@@ -21,14 +24,18 @@ class Main extends Component {
         });
     }
 
+    getQuestionData() {
+
+    }
+
     render() {
 
         if (this.state.gameStarted === false) {
             return (
                 <div className="instructions-section">
                     <br />
-                    <h3>Instructions:</h3>
-                    <p>Choose the correct answer.</p>
+                    <h3>How to play:</h3>
+                    <p>Answer the following three questions correctly!</p>
                     <div className="startButton-section">
                         <button className="startBtn" onClick={this.startGame}>Start!</button>
                     </div>
