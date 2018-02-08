@@ -9,13 +9,14 @@ class Main extends Component {
 
         this.state = {
             gameStarted: false,
-            questions: []
+            question_array: []
         }
-
-        const url = ''
 
         // Bindataan metodien kontekstit konstruktorissa
         this.startGame = this.startGame.bind(this);
+
+        this.getJSON();
+
     }
 
     startGame() {
@@ -24,7 +25,31 @@ class Main extends Component {
         });
     }
 
-    getQuestionData() {
+    getJSON() {
+
+        let array;
+
+        fetch("https://oinasjo.github.io/mySite/question_data.json")
+            .then(response => response.json())
+            .then(json => {
+                array = json.question_array;
+                this.setJSON(array);
+            })
+            .catch(function (error) {
+                console.warn("Fetch error: ", error);
+            });
+
+    }
+
+    setJSON(array) {
+
+        let array1 = this.state.question_array.slice(0, array.length);
+        let array2 = array;
+        let array3 = array1.concat(array2);
+
+        this.setState({
+            question_array: array3
+        });
 
     }
 
@@ -44,7 +69,7 @@ class Main extends Component {
         } else {
             return (
                 <div>
-                    <Question />
+                    <Question data={this.state.question_array}/>
                 </div>
             );
         }

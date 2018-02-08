@@ -15,7 +15,8 @@
                 "Blue",
                 "Green",
                 "Violet"
-            ]
+            ],
+            "right_answer": "Blue"
         },
         {
             "question": "Is this game boring?",
@@ -23,7 +24,8 @@
                 "Yes",
                 "No",
                 "Yes?"
-            ]
+            ],
+            "right_answer": null
         }
     ]
 }
