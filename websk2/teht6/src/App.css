@@ -44,3 +44,54 @@ li a {
 li a:hover {
   background-color: #111;
 }
+
+.userList {
+  list-style-type: none;
+  float:left;
+  margin: auto;
+  width: 100%;
+  background-color: rgb(190, 190, 190);
+}
+
+.usersTable {
+  border-spacing: 20px;
+  margin-bottom: 30px;
+  background-color: rgb(190, 190, 190);
+}
+
+.text {
+  width: 50%;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+
+td {
+  width: 100px;
+}
+
+.UsersList-section {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+}
+
+.UserForm-section {
+  width: 50%;
+  margin: auto;
+  background-color: rgb(190, 190, 190);
+  padding: 20px;
+}
+
+.sendButton {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(164, 164, 164);
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 17px;
+  text-decoration: none;
+  font-size: 15px;
+}
