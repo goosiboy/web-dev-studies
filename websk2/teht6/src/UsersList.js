@@ -89,7 +89,7 @@ class UsersList extends Component {
         return (
             <section className="UsersList-section">
                 <div className="userList">
-                <h2>Ilmoittautuneet:</h2>
+                <h2>Ilmoittautuneet:</h2><br /><br />
                     <table className="usersTable">
                         <tbody>
                         <tr id="userTr">

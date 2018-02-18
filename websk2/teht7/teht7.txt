@@ -1,0 +1,14 @@
+a)
+Tee pieni Node-moduuli joka exporttaa anonyymin funktion.
+Funktio arpoo satunnaisen luvun käyttäjän antamalta väliltä.
+Testaa modulia (ja funktiota) console.log:illa erillisestä tiedostosta.
+
+b)
+Tee toinen moduuli joka exporttaa ES6-luokan. Luokassa on kaksi metodia,
+'randomNumber', joka arpoo satunnaisluvun ja 'calcAverage' joka laskee
+taulukossa olevien lukujen keskiarvon. Testaa moduulia (ja metodeja)
+console.log:illa erillisestä tiedostosta.
+
+c)
+Sama kuin kohdassa b) mutta exporttaa nyt anonyymi olio.
+
