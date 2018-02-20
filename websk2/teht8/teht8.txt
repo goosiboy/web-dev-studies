@@ -1,0 +1,18 @@
+Tee MongoDB-kanta ja collection joka sisältää dokumentteja joissa on opiskelijoiden tietoja.
+Tiedot ovat: opiskelijanumero, nimi, email, opintopisteet ja kurssit. Kurssit on alidokumentti
+jossa ovat tiedot: kurssinnimi, laajuus ja arvosana. Tee pieni sovellus joka suorittaa
+tietokantaoperaatioita kun ajat tiedostoja. Käytä Mongon käsittelyyn Mongoosea.
+Huomaa että Mongoose luo automaattisesti tietokannan ja collectionin kun ajat tiedoston add.js jolla
+lisäät ensimmäisen opiskelijan.
+
+Toiminnot ovat:
+1. Lisää uusi opiskelija.
+2. Poista opiskelija opiskelijanumeron perusteella.
+3. Hae kaikki opiskelijat joilla on opintopisteitä alle antamasi raja-arvon 100 (Mongoose query).
+4. Muokkaa opiskelijan opintopisteitä.
+5. Lisää opiskelijalle uusi kurssi,
+6. Muokkaa opiskelijan kurssin arvosanaa.
+
+Sovellukseen ei siis tarvitse tehdä edes minkäänlaista merkkipohjaista käyttöliittymää.
+Riittää kun teet tiedostot add.js, delete.js, find.js, update.js, addcourse.js ja updategrade.js
+Tee lisäksi opiskelijan modelille tiedosto Student.js, jonka haet requirella muihin tiedostoihin.
