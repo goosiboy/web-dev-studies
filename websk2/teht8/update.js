@@ -33,6 +33,8 @@ module.exports = {
 
                 console.log("User: ", user);
 
+                user.save();
+
             });
 
     },
@@ -41,7 +43,7 @@ module.exports = {
     changeGrade: function(user, data, grade) {
 
     let userData = user;
-    let courseData = data;
+    let courseName = data;
     let courseGrade = grade;
 
     Student
@@ -49,17 +51,16 @@ module.exports = {
             userData,
             function (err, user) {
                 if (err) throw err;
-            user.findOne(
-                courseData,
-                function(err, course) {
-                    if (err) throw err;
 
-                    course.grade = courseGrade;
+                user.courses.find(function(element) {
+                    if(element.name === courseName) {
+                        element.grade = courseGrade;
+                        console.log("Course grade changed!");
 
-                    console.log("course: ", course);
-
+                        element.save();
+                        user.save();
+                    }
                 });
-
         });
 
     }

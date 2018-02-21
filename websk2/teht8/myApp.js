@@ -12,7 +12,7 @@ const changeGrade = updateMethods.changeGrade;
 //addStudent(2, "asdasd", "asdasdad");
 //addStudent(3, "asdasd", "asdasdad");
 
-//findUser();
+//findUser({studentNumber:2});
 
 //removeUser({studentNumber: 3});
 
@@ -20,14 +20,16 @@ const changeGrade = updateMethods.changeGrade;
 
 /*
 addCourse({ studentNumber: 2 }, {
-    name: "Outo kurssi",
+    name: "Kolmas kurssi",
     size: 10,
     grade: 5
 });
 */
 
+/*
 changeGrade(
     { studentNumber: 2 },
-    { name: "Outo kurssi" },
-    3
+    "Outo kurssi",
+    2
 );
+*/
