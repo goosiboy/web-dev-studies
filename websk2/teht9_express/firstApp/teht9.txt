@@ -1,0 +1,22 @@
+https://www.youtube.com/watch?v=gqcBptGjHTo
+
+Tee edellisessä tehtävässä luomallesi opiskelijatietokannalle Expressillä REST-serveri
+jonka tarjoamaa apia testaat Postmanilla. Tässä vaiheessa ei tarvitse siis tehdä frontendiä
+eli REST-clientia.
+
+REST-serverin toiminnot ovat seuraavat:
+1) Kaikkien opiskelijoiden haku.
+2) Yhden opiskelijan haku.
+3) Opiskelijan lisäys
+4) Opiskelijan poisto
+5) Opiskelijan muokkaus
+6) Niiden opiskelijoiden haku joilla on opintopisteitä alle 100.
+7) Uuden kurssin lisäys määrätylle opiskelijalle
+8) Kurssin muokkaus.
+
+Arkkitehtuurin kannalta on parempi jos teet routes-kansiossa olevassa reititystiedostossa
+pelkän reitityksen ja siirrät mongoose-kantaoperaatiot toiseen tiedostoon.
+Ne voivat olla kontrollerissa kuten tässä esimerkissä ja tuntikoodeja -kansiossa
+olevassa esimerkissä, mutta kantaoperaatiot voivat olla myös modelin metodeina tai
+erillisessä tiedostossa jota kutsutaan kontrollerissa. Express on joustava ja voit
+luoda sillä tarkoituksiisi parhaiten soveltuvan arkkitehtuurin.

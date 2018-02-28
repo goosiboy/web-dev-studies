@@ -1,4 +1,4 @@
-const Student = require('./Student.js');
+const Student = require('./models/Student.js');
 
 module.exports = function findUser() {
     Student.find( { $where : "this.points <= 100" } , function(err, user) {

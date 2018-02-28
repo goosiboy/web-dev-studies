@@ -1,4 +1,4 @@
-const Student = require('./Student.js');
+const Student = require('./models/Student.js');
 
 module.exports = function addStudent(studentNumber, studentName, studentEmail, studentPoints, studentCourses) {
     let studentID = studentNumber;
