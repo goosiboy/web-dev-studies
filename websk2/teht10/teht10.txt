@@ -1,0 +1,9 @@
+Tee edellisen tehtävän POST, DELETE ja PUT -reitteihin autentikaatio JWT:llä
+(tässä mallina valmis router-tiedosto jossa on autentikaatio). Huomaa että
+tässä autentikaatiossa ei ole vielä käyttöliittymää vaan käyttö tapahtuu Postmanilla.
+Postmanilla pitää mennä ensin autentikaatioreittiin jonne postataan tunnus ja salasana
+jolloin saadaan Token. Kun esim. postataan uusi opiskelija, niin laitetaan
+Postmanissa opiskelijan tietojen lisäksi headerin tai bodyn mukana avain token
+(tai x-access-token) ja sen arvona tokenin arvo. Kun oikea token on lähetetty,
+niin opiskelijan postaus onnistuu. Tämä esimerkki esittää ratkaisun tehtävään
+mutta kantana on MySQL ja tiedot eivät ole opiskelijatietoja vaan ilmoittautumistietoja.
