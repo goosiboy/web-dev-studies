@@ -1,10 +1,15 @@
-const Student = require('./models/Student.js');
+const Student = require('../models/Student.js');
 
-module.exports = function findUser() {
-    Student.find( { $where : "this.points <= 100" } , function(err, user) {
+module.exports = function findUser(param, callback) {
+
+    let argument = param;
+
+    Student.find( { $where : argument } , function(err, user) {
         if (err) throw err;
 
-        console.log("user: ", user);
+        if(callback !== null) {
+            callback(user);
+        }
 
     });
 }

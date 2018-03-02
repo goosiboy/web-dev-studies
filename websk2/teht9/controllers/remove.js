@@ -1,6 +1,6 @@
-const Student = require('./models/Student.js');
+const Student = require('../models/Student.js');
 
-module.exports = function removeUser(args) {
+module.exports = function removeUser(args, callback) {
 
     let searchParam = args || {};
 
@@ -16,10 +16,10 @@ module.exports = function removeUser(args) {
             } else {
                 if(user !== null) {
                     user.remove(function(err) {
-                        console.log("User removed!");
+                        callback("User removed!");
                     });
                 } else {
-                    throw "User doesnt exist."
+                    callback("User doesnt exist");
                 }
             }
     })

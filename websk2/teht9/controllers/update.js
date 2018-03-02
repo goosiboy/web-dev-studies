@@ -1,7 +1,7 @@
-const Student = require('./models/Student.js');
+const Student = require('../models/Student.js');
 
 module.exports = {
-    updatePoints: function(user, data) {
+    updatePoints: function(user, data, callback) {
 
         let userData = user;
         let userPoints = data;
@@ -14,11 +14,11 @@ module.exports = {
 
                 user.points = userPoints;
 
-                console.log("User: ", user);
+                callback("Users points updated");
 
             });
     },
-    addCourse: function(user, data) {
+    addCourse: function(user, data, callback) {
 
         let userData = user;
         let courseData = data;
@@ -31,7 +31,7 @@ module.exports = {
 
                 user.courses.push(courseData);
 
-                console.log("User: ", user);
+                callback("Course added");
 
                 user.save();
 

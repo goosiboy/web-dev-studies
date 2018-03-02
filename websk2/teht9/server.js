@@ -5,7 +5,8 @@ let express = require('express'),
     expressHbs = require('express-handlebars');
 
 let search = require('./routes/searchStudent'),
-    update = require('./routes/updateStudent');
+    update = require('./routes/updateStudent'),
+    index = require('./routes/index');
 
 app.engine('.hbs', expressHbs(
     {
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded(
 app.use(bodyParser.json());
 
 // Routet
+app.use('/', index);
 app.use('/search', search);
 app.use('/update', update);
 

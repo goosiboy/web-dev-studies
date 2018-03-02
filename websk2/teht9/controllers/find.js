@@ -1,4 +1,4 @@
-const Student = require('./models/Student.js');
+const Student = require('../models/Student.js');
 
 module.exports = function searchDB(args) {
 

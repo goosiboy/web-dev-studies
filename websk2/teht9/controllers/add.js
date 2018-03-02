@@ -1,11 +1,11 @@
-const Student = require('./models/Student.js');
+const Student = require('../models/Student.js');
 
-module.exports = function addStudent(studentNumber, studentName, studentEmail, studentPoints, studentCourses) {
-    let studentID = studentNumber;
-    let name = studentName;
-    let email = studentEmail;
-    let points = studentPoints || 0; // Not required
-    let courses = studentCourses || [];
+module.exports = function addStudent(paramObject, callback) {
+    let studentID = paramObject.studentNumber;
+    let name = paramObject.studentName;
+    let email = paramObject.studentEmail;
+    let points = paramObject.studentPoints || 0; // Not required
+    let courses = paramObject.studentCourses || [];
 
     let student = new Student({
         studentNumber: studentID,
@@ -16,8 +16,11 @@ module.exports = function addStudent(studentNumber, studentName, studentEmail, s
     });
 
     student.save(function(err) {
-        if (err) throw err;
-        console.log("User saved succesfully!");
+        if (err){
+            callback("Error: ", err);
+        } else {
+            callback("User added!");
+        }
     });
 
 };
