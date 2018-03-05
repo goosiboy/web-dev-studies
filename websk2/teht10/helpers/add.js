@@ -17,7 +17,7 @@ module.exports = function addStudent(paramObject, callback) {
 
     student.save(function(err) {
         if (err){
-            callback("Error: ", err);
+            callback("Error ", err);
         } else {
             callback("User added!");
         }

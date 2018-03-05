@@ -39,7 +39,6 @@ module.exports = {
 
     },
 
-    // KESKEN!!!!
     changeGrade: function(user, data, grade) {
 
     let userData = user;

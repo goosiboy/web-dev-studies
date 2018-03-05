@@ -1,5 +1,4 @@
-let mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/teht8');
+let mongoose = require('../db');
 
 let Schema = mongoose.Schema;
 
@@ -41,8 +40,6 @@ studentSchema.pre('save', function(next) {
     next();
 });
 
-// the schema is useless so far we need to create a model using it
-let Student = mongoose.model('User', studentSchema);
+let Student = mongoose.model('Student', studentSchema);
 
-// make this available to our users in our Node applications
 module.exports = Student;

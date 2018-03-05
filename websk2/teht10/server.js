@@ -1,12 +1,9 @@
 let express = require('express'),
-    app = express(),
     port = process.env.PORT || 3000,
     bodyParser = require('body-parser'),
     expressHbs = require('express-handlebars');
 
-let search = require('./routes/searchStudent'),
-    update = require('./routes/updateStudent'),
-    index = require('./routes/index');
+let app = require('./app.js');
 
 app.engine('.hbs', expressHbs(
     {
@@ -25,11 +22,6 @@ app.use(bodyParser.urlencoded(
     }
 ));
 app.use(bodyParser.json());
-
-// Routet
-app.use('/', index);
-app.use('/search', search);
-app.use('/update', update);
 
 // Starttaa palvelin
 app.listen(port);

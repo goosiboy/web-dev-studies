@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 
 const Student = require('../models/Student');
-const update = require('../controllers/update');
+const update = require('../helpers/update');
 
 router.use(function(req, res, next){
     console.log('Something happened!');
