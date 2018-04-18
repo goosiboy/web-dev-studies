@@ -20,4 +20,10 @@ module.exports = function(app) {
   app.route('/modifyName')
     .post(Student.modifyName);
 
+  app.route('/addCourse')
+    .post(Student.addCourse);
+  
+  app.route('/modCourse')
+    .post(Student.modCourse);
+
 };
