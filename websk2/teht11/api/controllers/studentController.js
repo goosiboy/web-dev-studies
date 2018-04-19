@@ -17,16 +17,14 @@ module.exports = {
                     let user = users;
         
                     if (isEmpty(searchParam)) {
-                        res.send("User was not specified. Cannot remove unspecified user. Aborting.");
-                        return;
+                        throw "User was not specified. Cannot remove unspecified user. Aborting."
                     } else {
                         if (user !== null) {
                             user.remove(function (err) {
                                     res.send("User removed!");
                                 });
                         } else {
-                            res.send("User doesnt exist.");
-                            return;
+                            throw "User doesnt exist."
                         }
                     }
                 })
