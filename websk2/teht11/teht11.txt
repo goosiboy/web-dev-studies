@@ -1,0 +1,23 @@
+Yhdistä edellisen harjoituksen REST-backend Angular-frontendiin. 
+Frontendin keskeneräisen perusrungon saat tästä. Koska asiakassovellus ja 
+palvelinsovellus ovat nyt eri palvelimilla ja eri porteissa, laita cors-moduli 
+palvelinpuolelle toimimaan jotta cross-domain -tiedonsiirto onnistuu. 
+Tee asiakassovellukseen autentikaatio eli kirjautuminen admin-näkymään JWT-tokenin avulla. 
+Rekisteröitymistä ei tarvitse tehdä vaan vakiotunnarit voivat olla valmiina kannassa. 
+Kyseessä on siis itse toteutettava autentikaatio joka ei perustu mihinkään valmiiseen palveluun.
+
+Autentikaatio frontendissä on seuraavanlainen: Tee autentikaatioservice, jonne lähetät 
+tunnarit login-lomakkeelta. Service ottaa yhteyttä backendiin ja hakee tokenin. 
+Tokenin validiteettia voidaan vielä tarvittaessa tutkia. Token laitetaan sessionstorageen 
+mikäli se on validi. Tee guard-tiedosto joka sulkee reitin admin-sivulle mikäli token 
+ei ole sessionstoragessa. Näet siis ilman kirjautumista listanäkymän ja kirjautumisnäkymän, 
+mutta kirjautumisen jälkeen näet myös admin-näkymän jossa pääset muokkaamaan opiskelijoiden 
+tietoja. Voidaksesi lisätä, poistaa tai muokata opiskelijoita admin-tilassa, pitää token 
+lähettää serverille esim. lisättävän tiedon bodyssä tai poistopyynnön headerissa. Mallia voit 
+katsoa tästä tutoriaalista. Ratkaisu voisi näyttää suunnilleen tältä. Kurssitiedot voit jättää 
+sovelluksesta pois, pelkkien opiskelijan tietojen esitys ja editointi riittää.
+
+- login näkymä
+- loggauksen onnistuttua admin näkymä
+- admin näkymässä voi muokata opiskelijoiden tietoja
+- sessionstorage & jwt
