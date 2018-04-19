@@ -1,29 +1,21 @@
 let express = require('express'),
+    app = express(),
     port = process.env.PORT || 3000,
-    bodyParser = require('body-parser'),
-    expressHbs = require('express-handlebars');
+    routes = require('./api/routes/routes'),
+    cors = require('cors');
 
-let app = require('./app.js');
+let bodyParser = require('body-parser');
 
-app.engine('.hbs', expressHbs(
-    {
-        defaultLayout: 'layout',
-        extname: '.hbs'
-    }
-));
+// parse application/json
+app.use(bodyParser.json())
 
-app.set('view engine', '.hbs');
-app.set('views', './views');
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// Express configurointi
-app.use(bodyParser.urlencoded(
-    {
-        extended: true
-    }
-));
-app.use(bodyParser.json());
+// Allow cross-origin resource sharing
+app.use(cors());
 
-// Starttaa palvelin
 app.listen(port);
 
-console.log('RESTful API server started on: ' + port);
+routes(app);
+
+console.log('RESTful API server started on port:', port);
