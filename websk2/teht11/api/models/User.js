@@ -33,3 +33,26 @@ let User = mongoose.model('User', userSchema);
 
 // make this available to our users in our Node applications
 module.exports = User;
+
+module.exports.getUserById = function(id, callback) {
+    User.findById(id, callback);
+};
+
+// Find user by name
+module.exports.getUserByName = function(name, callback) {
+    const query = {
+        name: name
+    };
+
+    User.findOne(query, callback);
+
+};
+
+// Compare passwords
+module.exports.comparePasswords = function(password1, password2, callback) {
+    if(password1 === password2) {
+        callback(null, true);
+    } else {
+        callback("Error!", false);
+    }
+}

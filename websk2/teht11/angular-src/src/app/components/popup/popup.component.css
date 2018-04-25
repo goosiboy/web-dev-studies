@@ -1,0 +1,52 @@
+#studentList {
+    background-color: rgb(236, 236, 236);
+    border: 2px solid rgb(197, 197, 197);
+    border-radius: 15px;
+    margin: 10px; 
+    padding: 10px;
+    width: 60%;
+    font-size: 18px;
+}
+
+#number {
+    margin: 10px;    
+    font-weight: bold;
+}
+
+#name {
+    margin: 10px;
+}
+
+#email {
+    margin: 10px;
+}
+
+#myForm {
+    margin: 10px;
+}
+
+#btn {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#btn2 {
+    float: right;
+    margin: 15px;
+}
+
+#input {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#btn:focus {
+    border: 2px solid rgb(136, 136, 136);
+}
+
+#btn:hover {
+    background-color: rgb(184, 184, 184);
+    cursor: pointer;
+}

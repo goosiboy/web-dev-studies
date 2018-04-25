@@ -21,27 +21,42 @@ module.exports = {
             }
         );
     },
-    // Login - järjestelmän alustus
-    auth: function(req, res) {
+    auth: function(req, res) {        
+        const name = req.body.username;
+        const password = req.body.password;
+    
+        // Check if user exists
+        User.getUserByName(name, (err, user) => {
+            if(err) throw err;
 
-        // Otetaan vastaan headersissa oleva tietty arvo. Jos arvo on tyhjä -> error.
-        let token = req.headers['x-access-token'];
-        if(!token) return res.send({ auth: false, message: 'No token provided.' });
+            if(!user) {
+                return res.json({success: false, msg: 'User not found'});
+            }
 
-        // Verifioidaan vastaanotettu token ja verrataan sitä config.secret - arvoon. Jos autentikaatio
-        // onnistuu, saadaan decodattu arvo, jonka ID:tä verrataan tietokannan käyttäjien tunnuksiin. 
-        // Näin saamme selvitettyä käyttäjän, sekä pyynnön oikeellisuuden. 
-        jwt.verify(token, config.secret, function(err, decoded) {
-            if (err) return res.send({ auth: false, message: 'Failed to authenticate token.' });
-
-            // { password: 0 } -> Estetään salasanan lähetys osana responsea.
-            // Haetaan kannasta oikea käyttäjä vertaamalla tunnuksia. Käyttäjän tiedot palautetaan 
-            // responsena.
-            User.findById(decoded.id, { password: 0 }, function (err, user) { 
-                if(err) return res.send("There was a problem!");
-                if(!user) return res.send("User not found!");
-                res.send(user);
+            console.log(user);
+    
+            // We compare the passwords. If we get a match, a token will be assigned
+            User.comparePasswords(password, user.password, function(err, isMatch) {
+                if(err) throw err;
+                if(isMatch){
+                    const token = jwt.sign({data: user}, config.secret, {
+                        expiresIn: 604800 // 1 week 
+                    });
+                    
+                    res.json({
+                        success: true,
+                        token: token,
+                        user: {
+                            id: user._id,
+                            name: user.name,
+                            password: user.password
+                        }
+                    });
+                } else {
+                    return res.json({success: false, msg: 'Wrong password'});
+                }
             });
+    
         });
 
     },

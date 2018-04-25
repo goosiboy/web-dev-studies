@@ -1,0 +1,32 @@
+<br>
+<h3>Muokkaa:</h3>
+<br>
+<p><i>Muokkaa opiskelijan tietoja kirjoittamalla uudet tiedot lomakkeeseen.</i></p>
+<p><i>Hyväksy muutokset klikkaamalla "Muokkaa".</i></p>
+<hr>
+<br>
+<div id="studentList">
+  <div id="number">ID: {{ student.studentNumber }} </div>
+  <hr>
+  <div id="name">Nimi: {{ student.name }} </div>
+  <hr>
+  <div id="email">Email: {{ student.email }} </div>
+</div>
+<div id="studentList">
+  <div id="myForm">
+      <form [formGroup]="newForm" (ngSubmit)="onClickSubmit(newForm.value)">
+        <input id="input" type="text" class="fortextbox" name="name" 
+            placeholder="Nimi" formControlName="name">
+        <br/>
+  
+          <input id="input" type="email" class="fortextbox" name="email" 
+            placeholder="Email" formControlName="email">
+        <br/>
+        
+        <input id="btn" type="submit" class="forsubmit" value="Muokkaa">
+      </form>
+  </div>
+  <button id="btn2" (click)="backButtonClick()">Takaisin</button>
+  <button id="btn2" (click)="removeStudent()">Poista opiskelija</button>
+</div>
+

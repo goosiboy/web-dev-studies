@@ -1,0 +1,28 @@
+<div id="wrapper">
+  <h2>
+      Admin sivut!
+  </h2>
+  <hr>
+  <app-popup *ngIf="popUp" (onBackButtonClick)="onBackButtonClick($event)"></app-popup>
+  <div *ngIf="!popUp" class="content">
+    <br>
+    <h3>Opiskelijat</h3>
+    <br>
+    <p><i>Muokkaa opiskelijoiden tietoja klikkaamalla opiskelija - korttia.</i></p>
+    <p><i>Voit myös lisätä opiskelijan klikkaamalla "Uusi opiskelija" - nappia.</i></p>
+    <hr>
+    <br>
+    <ul>
+      <li *ngFor="let student of students">
+        <div id="studentList" (click)="studentListClick(student)">
+          <div id="number">ID: {{ student.studentNumber }} </div>
+          <hr>
+          <div id="name">Nimi: {{ student.name }} </div>
+          <hr>
+          <div id="email">Email: {{ student.email }} </div>
+        </div>
+      </li>
+    </ul>
+    <br>
+  </div>
+</div>

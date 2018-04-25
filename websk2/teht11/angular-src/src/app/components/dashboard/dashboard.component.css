@@ -1,0 +1,52 @@
+ul {
+    list-style-type: none;
+}
+
+#wrapper {
+    margin: auto;
+    width: 90%;
+}
+
+#studentList {
+    background-color: rgb(236, 236, 236);
+    border: 2px solid rgb(197, 197, 197);
+    border-radius: 15px;
+    margin: 10px; 
+    padding: 10px;
+    width: 60%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#studentList:hover {
+    background-color: rgb(199, 199, 199);
+    border: 2px solid rgb(136, 136, 136);
+}
+
+#number {
+    margin: 10px;    
+    font-weight: bold;
+}
+
+#name {
+    margin: 10px;
+}
+
+#email {
+    margin: 10px;
+}
+
+#numberInput{
+    float: right;
+    width: 50%;
+}
+
+#nameInput{
+    float: right;
+    width: 50%;
+}
+
+#emailInput{
+    float: right;
+    width: 50%;
+}

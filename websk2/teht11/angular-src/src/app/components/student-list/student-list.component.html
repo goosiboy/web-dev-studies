@@ -1,0 +1,11 @@
+<h2>Students:</h2>
+<br>
+<ul>
+  <li *ngFor="let student of students">
+    <div id="studentList">
+      <p>{{ student.studentNumber }}</p>
+      <p>{{ student.name }}</p>
+      <p>{{ student.email }}</p>
+    </div>
+  </li>
+</ul>

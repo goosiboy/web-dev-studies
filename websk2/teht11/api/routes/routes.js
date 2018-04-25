@@ -4,7 +4,7 @@ module.exports = function(app) {
   let AuthController = require('./../controllers/authController.js');
 
   app.route('/add')
-    .post(Student.addStudent);
+    .put(Student.addStudent);
 
   app.route('/remove')
     .post(Student.removeUser);
@@ -18,8 +18,8 @@ module.exports = function(app) {
   app.route('/findByPoints')
     .post(Student.findByPoints);
 
-  app.route('/modifyName')
-    .post(Student.modifyName);
+  app.route('/modifyInfo')
+    .put(Student.modifyInfo);
 
   app.route('/addCourse')
     .post(Student.addCourse);
@@ -27,12 +27,10 @@ module.exports = function(app) {
   app.route('/modCourse')
     .post(Student.modCourse);
 
-  // Uuden käyttäjän rekisteröinti. Login - järjestelmän alustus.
   app.route('/register')
     .post(AuthController.register);
 
-  // Ei hyödynnetä tässä tehtävässä. Tsekkaa authControllerin auth0 - metodi.
   app.route('/auth')
-    .get(AuthController.auth);
+    .post(AuthController.auth);
 
 };
