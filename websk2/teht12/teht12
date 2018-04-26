@@ -1,7 +1,0 @@
-Tee edellä esitetyn yksinkertaisen chatin ja tämän tutoriaalin "pelin" koodeja soveltamalla 
-yksinkertainen numeronarvauspeli jota voi pelata kaksi tai useampi pelaaja samanaikaisesti. 
-Tarkoituksena on siis arvata numero joka on arvottu tietyltä väliltä. Pelaajat saavat 
-satunnaisesti luodun nimen, kirjoittavat arvauksia tekstikenttään jonka alapuolelle ilmaantuvat 
-nimet, arvaukset ja tieto siitä oliko arvaus liian suuri tai pieni. Ensimmäisenä oikean 
-luvun arvannut pelaaja voittaa pelin. Ratkaisu voisi näyttää suunnilleen 
-tältä (voit tehdä myös kauniimman käyttöliittymän).
