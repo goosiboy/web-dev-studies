@@ -21,6 +21,7 @@ export class StudentDataService {
     this.observableData = new BehaviorSubject(this.clickedStudentData);
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit(): void {
   }
 
@@ -29,7 +30,7 @@ export class StudentDataService {
     this.observableData.next(this.clickedStudentData);
   }
 
-  getAll(callback) {               
+  getAll(callback) {
     return this.http.get('http://localhost:3000/findAll').subscribe(function(data) {
       this.studentData = data;
       callback(this.studentData);
@@ -45,7 +46,7 @@ export class StudentDataService {
       const headers = new HttpHeaders()
                           .set('Content-Type', 'application/json')
                           .set('x-access-token', token);
-                          
+
       return this.http.post('http://localhost:3000/remove', userID, { headers: headers }).subscribe(response => {
         console.log("data: ", response);
       });
@@ -63,7 +64,7 @@ export class StudentDataService {
       const headers = new HttpHeaders()
                           .set('Content-Type', 'application/json')
                           .set('x-access-token', token);
-                          
+
       return this.http.put('http://localhost:3000/modifyInfo', newData, { headers: headers }).subscribe(response => {
         console.log("data: ", response);
       });
