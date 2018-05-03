@@ -1,0 +1,41 @@
+Selvitä mikä tekee sovelluksesta universaalin. Pyri ymmärtämään miten
+sovelluksen arkkitehtuuri on toteutettu ja miten sovellus toimii.
+
+Kirjoita lyhyt raportti jossa selvität miten tutkimasi universaalisovellus
+toimii ja pohdit universaalin web-sovelluksen hyviä ja huonoja puolia.
+
+Raportti------------------------------------------------------------------
+
+Judo heroes on arkkitehtuuriltaan melko normaali webpackilla hallittu React - applikaatio.
+Kansiorakenne noudattaa 2018 web-devauksen yleisesti hyväksyttyjä periaatteita.
+
+Reactin workflown mukainen komponentti - ratkaisu näyttäisi myös olevan käytössä. Applikaation
+'view' on leikelty palasiin, jotka jakavat keskenään dataa ns. propsien kautta. Komponentit
+käyttävät vastaanottamaansa dataa erilaisten näkymien muodostamiseksi.
+
+Applikaatiossa hyödynnetään React Router - moduulia, joka mahdollistaa eri komponenttien dynaamisen
+lataamisen sivulle. Router - kirjastossa luodaan objekti, jonka sisällä assosioidaan eri URLille
+halutut React komponentit. Kun selain lataa tietyn URL:n, lataa Router tähän osoitteeseen assosioidun
+komponentin sivulle. Jokaisella modernilla view - tason kirjastolla on jonkinlainen tapa hoitaa
+näkymien reitittäminen. Esimerkiksi Angular 5:ssa reititys tapahtuu melkein samalla tavalla, kuin
+Reactissa, vaikkakin pinnan alla koodin logiikka saattaakin olla erilaista.
+
+Applikaatiossa hyödynnetään webpackkia, mikä tarjoaa erilaisia meta - tason työkaluja kehityksen
+helpottamiseksi. Webpackin ansiosta (+ Babel) voidaan projektissa hyödyntää viimeisimpiä JS - hienouksia, kuten
+esimerkiski import jne. Lisäksi webpackin avulla voidaan luoda yhdistetty ES5 - standardin mukainen
+bundle.js - filu, jonka palvelin voi tarjota clientille ilman pelkoa siitä, että
+projektin sisäinen namespace hajoaa, tai että käyttäjän selain ei voisi ajaa koodia (ES6/ES7 - hienoudet
+eivät ole välttämättä vielä tuettuja kaikkien käyttäjien selaimissa).
+
+Universaali JS hoidetaan tässä esimerkki - applikaatiossa hyödyntämällä React Routerin
+match - metodia. Ensin express - serveri ottaa vastaan request - objektin, joka sisältää URL:n.
+Tämä tieto syötetään match - metodiin osana configuraatio - objektia, mikä sisältää myös tiedon
+kaikista mahdollisista reiteistä. Kun näiden tietojen asettaminen on onnistunut, saadaan
+callbackkina takaisin tiedot match - metodilta (virhe, uudelleenohjaus(?), tai komponentti).
+
+Jos kolmas ehto toteutuu, saadaan komponentin tiedot siis takaisin callbackkina, jolloin
+näkymän renderöintiin tarvittava HTML - markup voidaan palauttaa response.render - vastauksena
+clientille. Oikean routen määrittäminen, sekä sitä vastaavan komponentin valitseminen
+on näin tapahtunut palvelimen puolella.
+
+
