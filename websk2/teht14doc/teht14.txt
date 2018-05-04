@@ -1,0 +1,18 @@
+Teht 14: Kirjoita lyhyt dokumentti pilvipalvelun käyttöönotosta ja asennuksen vaiheista.
+
+-----------------------------------
+
+Pilvipalvelun käyttöön otto oli yllättävän helppo prosessi. Seuraamalla Herokusta löytyviä ohjeita
+pystyin asentamaan express - api:ni Herokun palvelimille ilman suurempia mietiskelyjä.
+
+Ensin täytyy tietenkin luoda tunnarit Herokun työkaluja käyttääksesi. Tämän jälkeen alustetaan git - tyyliin
+repository, josta pusketaan halutut tiedostot Herokun palvelimille. Palvelimelta näitä tiedostoja pystyy pyytämään
+ottamalla yhteyden Herokun tarjoamaan URL:ään.
+
+MongoDB:n asennus mLabiin oli myös helppoa. Loin tunnukset ja annoin Herokussa sijaitsevalle express - API:lleni mongo - ystävällisen
+osoitteen, jonka kautta se pystyy ottamaan yhteyden mLabin nyt hostaamaan tietokantaan.
+
+Reititys jne onnistuu nyt esim. postmanin kautta täydellisesti. Lisäksi expressiin liittämäni token - autentikaatio
+estää requestien tekemisen, jos validia tokenia ei löydy.
+
+Kokonaisuudessaan tehtävä oli erittäin helppo kiitos loistavan tutoriaalin :)
